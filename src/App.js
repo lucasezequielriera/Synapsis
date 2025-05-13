@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LanguageProvider } from './context/LanguageContext';
 import LanguageSelector from './components/LanguageSelector';
+import SynapsisLogo from './components/SynapsisLogo';
 import SynapsisHero from './components/SynapsisHero';
 import SynapsisFeatures from './components/SynapsisFeatures';
 import SynapsisSolutions from './components/SynapsisSolutions';
@@ -31,6 +32,7 @@ const App = () => {
   return (
     <LanguageProvider>
       <div className="font-sans bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 min-h-screen relative">
+        <SynapsisLogo />
         <LanguageSelector />
         <AnimatePresence>
           <motion.div
