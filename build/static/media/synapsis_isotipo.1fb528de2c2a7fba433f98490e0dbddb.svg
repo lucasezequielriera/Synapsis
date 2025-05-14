@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C560FF"/>
+      <stop offset="100%" stop-color="#3CF0FF"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Hexagon outline -->
+  <polygon points="128,16 224,80 224,176 128,240 32,176 32,80"
+           fill="none"
+           stroke="url(#grad)"
+           stroke-width="16"
+           stroke-linejoin="round"/>
+
+  <!-- Stylized "S" with circuit‑like nodes -->
+  <path d="M160 88c0-18-16-32-32-32h-32c-18 0-32 14-32 32s14 32 32 32h32c18 0 32 14 32 32s-14 32-32 32h-32c-18 0-32-14-32-32"
+        fill="none"
+        stroke="url(#grad)"
+        stroke-width="16"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+
+  <!-- Connection nodes -->
+  <circle cx="96"  cy="88"  r="8" fill="url(#grad)"/>
+  <circle cx="160" cy="88"  r="8" fill="url(#grad)"/>
+  <circle cx="96"  cy="168" r="8" fill="url(#grad)"/>
+  <circle cx="160" cy="168" r="8" fill="url(#grad)"/>
+</svg>

@@ -95,6 +95,9 @@ const translations = {
   'cta.form.companyPlaceholder': 'Your company',
   'cta.form.message': 'Message',
   'cta.form.messagePlaceholder': 'Your message',
+  'cta.form.successMessage': 'Your message has been sent successfully. We will contact you soon.',
+  'cta.form.errorMessage': 'An error occurred while sending the message. Please try again.',
+  'cta.form.sending': 'Sending...',
   'cta.button': 'Contact Now',
 
   'footer.companyDescription': 'Synapsis is a software development company focused on innovation and automation of business processes.',

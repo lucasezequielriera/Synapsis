@@ -11,9 +11,14 @@ import SynapsisPricing from './components/SynapsisPricing';
 import SynapsisCTA from './components/SynapsisCTA';
 import SynapsisFooter from './components/SynapsisFooter';
 import SynapsisWhatsApp from './components/SynapsisWhatsApp';
+import initSEOOptimizations from './utils/seo';
+import { onCLS, onFCP, onLCP } from 'web-vitals';
 
 const App = () => {
   useEffect(() => {
+    // Inicializar optimizaciones SEO
+    initSEOOptimizations();
+    
     // Smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
     
@@ -27,30 +32,69 @@ const App = () => {
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.animate-on-scroll').forEach((el) => observer.observe(el));
+
+    // Mejora del tiempo de primer renderizado (FCP)
+    const reportWebVitals = (metric) => {
+      // Envío de métricas a GA o servicio de análisis si está disponible
+      if (window.gtag) {
+        window.gtag('event', metric.name, {
+          event_category: 'Web Vitals',
+          event_label: metric.id,
+          value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+          non_interaction: true,
+        });
+      }
+      console.log(metric.name, metric.value);
+    };
+
+    // Registrar métricas web vitals
+    onCLS(reportWebVitals);
+    onFCP(reportWebVitals);
+    onLCP(reportWebVitals);
   }, []);
 
   return (
     <LanguageProvider>
       <div className="font-sans bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 min-h-screen relative">
-        <SynapsisLogo />
-        <LanguageSelector />
+        <header>
+          <SynapsisLogo />
+          <nav aria-label="Language selection">
+            <LanguageSelector />
+          </nav>
+        </header>
         <AnimatePresence>
-          <motion.div
+          <motion.main
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <SynapsisHero />
-            <SynapsisSolutions />
-            <SynapsisFeatures />
-            {/* <SynapsisTestimonials /> */}
-            <SynapsisPricing />
-            <SynapsisCTA />
-            <SynapsisFooter />
-            <SynapsisWhatsApp />
-          </motion.div>
+            <section aria-label="Introduction">
+              <SynapsisHero />
+            </section>
+            <section aria-label="Solutions">
+              <SynapsisSolutions />
+            </section>
+            <section aria-label="Features">
+              <SynapsisFeatures />
+            </section>
+            {/* <section aria-label="Testimonials">
+              <SynapsisTestimonials />
+            </section> */}
+            <section aria-label="Pricing">
+              <SynapsisPricing />
+            </section>
+            <section aria-label="Contact us">
+              <SynapsisCTA />
+            </section>
+          </motion.main>
         </AnimatePresence>
+        <footer>
+          <SynapsisFooter />
+        </footer>
+        <aside aria-label="WhatsApp contact">
+          <SynapsisWhatsApp />
+        </aside>
       </div>
     </LanguageProvider>
   );

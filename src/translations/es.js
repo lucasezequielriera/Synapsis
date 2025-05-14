@@ -98,6 +98,9 @@ const translations = {
   'cta.form.companyPlaceholder': 'Tu empresa',
   'cta.form.message': 'Mensaje',
   'cta.form.messagePlaceholder': 'Tu mensaje',
+  'cta.form.successMessage': 'Tu mensaje ha sido enviado correctamente. Nos pondremos en contacto contigo pronto.',
+  'cta.form.errorMessage': 'Ha ocurrido un error al enviar el mensaje. Por favor, inténtalo de nuevo.',
+  'cta.form.sending': 'Enviando...',
   'cta.button': 'Contactar Ahora',
 
   'footer.companyDescription': 'Synapsis es una empresa de desarrollo de software que se enfoca en la innovación y la automatización de procesos empresariales.',
