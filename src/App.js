@@ -13,6 +13,8 @@ import SynapsisFooter from './components/SynapsisFooter';
 import SynapsisWhatsApp from './components/SynapsisWhatsApp';
 import initSEOOptimizations from './utils/seo';
 import { onCLS, onFCP, onLCP } from 'web-vitals';
+import { HelmetProvider } from 'react-helmet-async';
+import SEO from './components/SEO';
 
 const App = () => {
   const isDesktop = window.innerWidth >= 1024;
@@ -56,53 +58,57 @@ const App = () => {
   }, []);
 
   return (
-    <LanguageProvider>
-      <div className="font-sans bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 min-h-screen relative">
-        <header>
-          {/* <SynapsisLogo /> */}
-          <nav aria-label="Language selection">
-            <LanguageSelector />
-          </nav>
-        </header>
-        <AnimatePresence>
-          <motion.main
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <section aria-label="Introduction">
-              <SynapsisHero />
-            </section>
-            { isDesktop && <>
-              <section aria-label="Solutions">
-                <SynapsisSolutions />
+    <HelmetProvider>
+      <LanguageProvider>
+        <div className="font-sans bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 min-h-screen relative">
+          <header>
+            {/* <SynapsisLogo /> */}
+            <nav aria-label="Language selection">
+              <LanguageSelector />
+            </nav>
+            {/* Global SEO meta tags */}
+            <SEO />
+          </header>
+          <AnimatePresence>
+            <motion.main
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <section aria-label="Introduction">
+                <SynapsisHero />
               </section>
-              <section aria-label="Features">
-                <SynapsisFeatures />
-              </section>
-              {/* <section aria-label="Testimonials">
-                <SynapsisTestimonials />
-              </section> */}
-              <section aria-label="Pricing">
-                <SynapsisPricing />
-              </section>
-              <section aria-label="Contact us">
-                <SynapsisCTA />
-              </section>
-            </>}
-          </motion.main>
-        </AnimatePresence>
-        { isDesktop && <>
-          <footer>
-            <SynapsisFooter />
-          </footer>
-          <aside aria-label="WhatsApp contact">
-            <SynapsisWhatsApp />
-          </aside>
-        </>}
-      </div>
-    </LanguageProvider>
+              { isDesktop && <>
+                <section aria-label="Solutions">
+                  <SynapsisSolutions />
+                </section>
+                <section aria-label="Features">
+                  <SynapsisFeatures />
+                </section>
+                {/* <section aria-label="Testimonials">
+                  <SynapsisTestimonials />
+                </section> */}
+                <section aria-label="Pricing">
+                  <SynapsisPricing />
+                </section>
+                <section aria-label="Contact us">
+                  <SynapsisCTA />
+                </section>
+              </>}
+            </motion.main>
+          </AnimatePresence>
+          { isDesktop && <>
+            <footer>
+              <SynapsisFooter />
+            </footer>
+            <aside aria-label="WhatsApp contact">
+              <SynapsisWhatsApp />
+            </aside>
+          </>}
+        </div>
+      </LanguageProvider>
+    </HelmetProvider>
   );
 };
 

@@ -12,7 +12,7 @@ const SynapsisHero = () => {
 
   // Helper to scroll smoothly to the contact section
   const scrollToContact = () => {
-    const contactSection = document.getElementById('solutions');
+    const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     } else {

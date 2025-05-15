@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon, CheckIcon } from '@heroicons/react/24/outline';
 import { useLanguage } from '../context/LanguageContext';
+import { Helmet } from 'react-helmet-async';
 
 const SynapsisPricing = () => {
   const { t } = useLanguage();
@@ -78,8 +79,30 @@ const SynapsisPricing = () => {
     }
   ];
 
+  // Estructura de datos Schema.org para los planes de precios
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": pricingPlans.map((plan, idx) => ({
+      "@type": "Product",
+      "position": idx + 1,
+      "name": plan.name,
+      "description": plan.description,
+      "offers": {
+        "@type": "Offer",
+        "price": plan.price,
+        "priceCurrency": plan.currency === '$' ? 'USD' : plan.currency,
+        "availability": "https://schema.org/InStock"
+      }
+    }))
+  };
+
   return (
     <section id="pricing" className="py-24 px-4 relative overflow-hidden">
+      {/* Schema.org structured data for pricing */}
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+      </Helmet>
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 grid-pattern opacity-10" />
