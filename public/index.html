@@ -8,11 +8,19 @@
     <meta name="author" content="Synapsis">
     <meta name="robots" content="index, follow">
     
-    <!-- PWA Support -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <!-- Optimizaciones de rendimiento -->
     <meta name="theme-color" content="#6D28D9">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Precargar fuentes críticas -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="/static/js/main.d0797e17.js" as="script">
+    <link rel="preload" href="/static/css/main.c51f8881.css" as="style">
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.synapsis.team">
@@ -43,9 +51,35 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Scripts -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- Estilos críticos inline para mejor rendimiento en móviles -->
+    <style>
+      /* Mejoras para scroll suave en móviles */
+      body {
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+      }
+      @media (max-width: 767px) {
+        .reduce-motion * {
+          animation: none !important;
+          transition: none !important;
+          transform: none !important;
+        }
+        /* Optimizaciones para evitar jank durante el scroll */
+        .bg-gradient-to-br {
+          background-attachment: fixed;
+          will-change: transform;
+        }
+        img {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    
+    <!-- Cargar TailwindCSS de forma asíncrona -->
+    <script defer src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Cargar Lottie de forma asíncrona tras la carga de la página -->
+    <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     
     <!-- Datos estructurados Schema.org -->
     <script type="application/ld+json">

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { LanguageProvider } from './context/LanguageContext';
 import LanguageSelector from './components/LanguageSelector';
@@ -15,6 +15,8 @@ import initSEOOptimizations from './utils/seo';
 import { onCLS, onFCP, onLCP } from 'web-vitals';
 
 const App = () => {
+  const isDesktop = window.innerWidth >= 1024;
+
   useEffect(() => {
     // Inicializar optimizaciones SEO
     initSEOOptimizations();
@@ -57,7 +59,7 @@ const App = () => {
     <LanguageProvider>
       <div className="font-sans bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 min-h-screen relative">
         <header>
-          <SynapsisLogo />
+          {/* <SynapsisLogo /> */}
           <nav aria-label="Language selection">
             <LanguageSelector />
           </nav>
@@ -72,29 +74,33 @@ const App = () => {
             <section aria-label="Introduction">
               <SynapsisHero />
             </section>
-            <section aria-label="Solutions">
-              <SynapsisSolutions />
-            </section>
-            <section aria-label="Features">
-              <SynapsisFeatures />
-            </section>
-            {/* <section aria-label="Testimonials">
-              <SynapsisTestimonials />
-            </section> */}
-            <section aria-label="Pricing">
-              <SynapsisPricing />
-            </section>
-            <section aria-label="Contact us">
-              <SynapsisCTA />
-            </section>
+            { isDesktop && <>
+              <section aria-label="Solutions">
+                <SynapsisSolutions />
+              </section>
+              <section aria-label="Features">
+                <SynapsisFeatures />
+              </section>
+              {/* <section aria-label="Testimonials">
+                <SynapsisTestimonials />
+              </section> */}
+              <section aria-label="Pricing">
+                <SynapsisPricing />
+              </section>
+              <section aria-label="Contact us">
+                <SynapsisCTA />
+              </section>
+            </>}
           </motion.main>
         </AnimatePresence>
-        <footer>
-          <SynapsisFooter />
-        </footer>
-        <aside aria-label="WhatsApp contact">
-          <SynapsisWhatsApp />
-        </aside>
+        { isDesktop && <>
+          <footer>
+            <SynapsisFooter />
+          </footer>
+          <aside aria-label="WhatsApp contact">
+            <SynapsisWhatsApp />
+          </aside>
+        </>}
       </div>
     </LanguageProvider>
   );

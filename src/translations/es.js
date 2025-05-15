@@ -1,13 +1,17 @@
 const translations = {
   // Hero section
   'hero.title': 'Synapsis',
-  'hero.subtitle': 'Transformando el futuro empresarial con IA y automatización inteligente',
+  'hero.subtitle': 'Transformando el presente con IA y automatización inteligente',
   'hero.button.start': 'Comenzar Ahora',
   'hero.button.demo': 'Ver Demostración',
-  'hero.stat.satisfaction': 'Satisfacción Cliente',
-  'hero.stat.projects': 'Proyectos Completados',
-  'hero.stat.companies': 'Empresas Atendidas',
-  'hero.stat.support': 'Soporte Técnico',
+  'hero.stat.number1': 'Sitio Web',
+  'hero.stat.number2': 'Sistema Empresarial',
+  'hero.stat.number3': 'Automatización',
+  'hero.stat.number4': 'Transformación Digital',
+  'hero.stat.website': 'Saber más sobre Sitios Web',
+  'hero.stat.companySystem': 'Saber más sobre Sistemas Empresariales',
+  'hero.stat.automatization': 'Saber más sobre Automatización',
+  'hero.stat.digitalTransformation': 'Sabre más sobre Transformación Digital',
 
   'features.title': 'Potencia tu Negocio',
   'features.titleHighlight': 'Inteligente',

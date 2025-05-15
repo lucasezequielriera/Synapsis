@@ -142,13 +142,13 @@ const SynapsisSolutions = () => {
             {solutions.map((solution, index) => {
               const isEven = index % 2 === 0;
               return (
-                <motion.div
-                  key={index}
+            <motion.div
+              key={index}
                   className={`flex flex-col md:flex-row items-center relative mb-20 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
                   custom={index}
                   initial="hidden"
                   whileInView="visible"
-                  viewport={{ once: true }}
+              viewport={{ once: true }}
                   variants={fadeInUpVariant}
                 >
                   {/* Dot on timeline */}
@@ -173,9 +173,9 @@ const SynapsisSolutions = () => {
                             className="text-white"
                             whileHover={{ rotate: 10, scale: 1.1 }}
                           >
-                            {solution.icon}
+                  {solution.icon}
                           </motion.div>
-                        </div>
+                </div>
 
                         {/* Text Content */}
                         <div className="flex-1">
@@ -188,20 +188,20 @@ const SynapsisSolutions = () => {
                           
                           {/* Features */}
                           <div className="flex flex-wrap gap-2 mb-4">
-                            {solution.features.map((feature, idx) => (
-                              <span
-                                key={idx}
+                {solution.features.map((feature, idx) => (
+                  <span
+                    key={idx}
                                 className={`px-2.5 py-1 text-xs font-medium rounded-full 
                                   bg-gradient-to-r ${solution.gradient} bg-opacity-10 backdrop-blur-sm 
                                   text-white shadow-sm border border-white/10`}
-                              >
-                                {feature}
-                              </span>
-                            ))}
-                          </div>
+                  >
+                    {feature}
+                  </span>
+                ))}
+              </div>
                           
                           {/* Action Button */}
-                          <motion.button
+              <motion.button
                             whileHover={{ scale: 1.02, x: 5 }}
                             whileTap={{ scale: 0.98 }}
                             className={`py-1.5 px-3 rounded-lg bg-gradient-to-r ${solution.gradient} bg-opacity-20 
@@ -210,7 +210,7 @@ const SynapsisSolutions = () => {
                           >
                             <span>{t('solutions.explore')}</span>
                             <ArrowLongRightIcon className="w-4 h-4 group-hover/button:translate-x-1 transition-transform" />
-                          </motion.button>
+              </motion.button>
                         </div>
                       </div>
                     </motion.div>
@@ -218,7 +218,7 @@ const SynapsisSolutions = () => {
 
                   {/* Connection Line for Mobile */}
                   <div className="h-14 w-1 bg-gradient-to-b from-fuchsia-400 to-cyan-500 my-2 block md:hidden"></div>
-                </motion.div>
+            </motion.div>
               );
             })}
           </div>
