@@ -165,7 +165,7 @@ const SynapsisHero = () => {
                   whileTap={{ scale: 0.95 }}
                   className="glass-effect p-4 rounded-xl cursor-pointer block"
                 >
-                  <div className="text-3xl font-bold text-gradient mb-2 text-center">{stat.number}</div>
+                  <div className="text-3xl font-bold text-gradient mb-2 text-center" style={{ overflowWrap: 'anywhere' }}>{stat.number}</div>
                   <div className="text-sm text-gray-400 text-center">{t(stat.labelKey)}</div>
                 </motion.a>
               );
