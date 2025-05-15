@@ -35,7 +35,6 @@ self.addEventListener('install', event => {
       // Caché principal para recursos críticos
       caches.open(CACHE_NAME)
         .then(async cache => {
-          console.log('Caché de recursos críticos iniciado');
           // Añadimos cada recurso de forma individual para que un fallo no interrumpa el resto
           await Promise.all(
             CRITICAL_ASSETS.map(async asset => {
@@ -50,7 +49,6 @@ self.addEventListener('install', event => {
       // Caché para recursos secundarios
       caches.open(RUNTIME_CACHE)
         .then(async cache => {
-          console.log('Caché de recursos secundarios iniciado');
           await Promise.all(
             SECONDARY_ASSETS.map(async asset => {
               try {
@@ -77,13 +75,11 @@ self.addEventListener('activate', event => {
             cacheName !== RUNTIME_CACHE
           )
           .map(cacheName => {
-            console.log('Eliminando caché antiguo:', cacheName);
             return caches.delete(cacheName);
           })
       );
     })
     .then(() => {
-      console.log('Service Worker activado correctamente');
       return self.clients.claim(); // Tomar control de clientes inmediatamente
     })
   );
@@ -112,7 +108,6 @@ self.addEventListener('fetch', event => {
           return response;
         })
         .catch(() => {
-          console.log('Fallback a caché para:', event.request.url);
           return caches.match(event.request)
             .then(cachedResponse => {
               return cachedResponse || caches.match('/index.html');

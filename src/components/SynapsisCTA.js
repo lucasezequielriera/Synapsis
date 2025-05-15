@@ -50,7 +50,6 @@ const SynapsisCTA = () => {
       EMAILJS_PUBLIC_KEY
     )
     .then((result) => {
-      console.log('Email enviado correctamente:', result.text);
       setFormStatus({
         isSubmitting: false,
         isSubmitted: true,
