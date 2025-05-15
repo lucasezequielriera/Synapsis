@@ -111,7 +111,7 @@ const SynapsisHero = () => {
           className="text-center"
         >
           <h1 className="text-5xl md:text-7xl font-bold pb-6 text-gradient" style={{ fontSize: '5.5rem' }}>
-            {t('hero.title')}
+            {t('hero.title', 'Synapsis')}
           </h1>
           
           {/* Typewriter Effect */}
