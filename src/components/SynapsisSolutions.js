@@ -115,9 +115,9 @@ const SynapsisSolutions = () => {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <span className="inline-block px-4 py-1.5 mb-4 text-xs font-semibold uppercase tracking-wide rounded-full glass-effect border border-white/10 text-fuchsia-400">
+          {/* <span className="inline-block px-4 py-1.5 mb-4 text-xs font-semibold uppercase tracking-wide rounded-full glass-effect border border-white/10 text-fuchsia-400">
             {t('solutions.label', 'Ruta Tecnológica')}
-          </span>
+          </span> */}
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             {t('solutions.title')} <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 to-cyan-400">{t('solutions.titleHighlight', 'Tecnológicas')}</span>
           </h2>
@@ -201,7 +201,7 @@ const SynapsisSolutions = () => {
               </div>
                           
                           {/* Action Button */}
-              <motion.button
+              {/* <motion.button
                             whileHover={{ scale: 1.02, x: 5 }}
                             whileTap={{ scale: 0.98 }}
                             className={`py-1.5 px-3 rounded-lg bg-gradient-to-r ${solution.gradient} bg-opacity-20 
@@ -210,7 +210,7 @@ const SynapsisSolutions = () => {
                           >
                             <span>{t('solutions.explore')}</span>
                             <ArrowLongRightIcon className="w-4 h-4 group-hover/button:translate-x-1 transition-transform" />
-              </motion.button>
+              </motion.button> */}
                         </div>
                       </div>
                     </motion.div>
@@ -240,7 +240,7 @@ const SynapsisSolutions = () => {
           
           <a 
             href="#contact" 
-            className="inline-flex items-center px-6 py-3 rounded-xl glass-effect border border-fuchsia-500/30 hover:border-fuchsia-500/80 transition-all hover:shadow-lg hover:shadow-fuchsia-500/20 group"
+            className="inline-flex items-center px-6 py-3 rounded-xl glass-effect border border-fuchsia-500/30 hover:border-fuchsia-500/80 transition-all hover:shadow-lg hover:shadow-fuchsia-500/20 group mt-4"
           >
             <span className="font-semibold bg-gradient-to-r from-fuchsia-400 to-cyan-400 bg-clip-text text-transparent">
               {t('solutions.contactUs', 'Solicitar consultoría tecnológica')}

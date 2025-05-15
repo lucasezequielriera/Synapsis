@@ -12,6 +12,8 @@ const translations = {
   'hero.stat.companySystem': 'See more about Company System',
   'hero.stat.automatization': 'See more about Automatization',
   'hero.stat.digitalTransformation': 'See more about Digital Transformation',
+  'hero.stat.consulting': 'Hello! I want to know more about',
+  'hero.stat.consultingSecondPart': 'Could you help me?',
 
   'features.title': 'Power Your Business',
   'features.titleHighlight': 'Intelligent',
@@ -45,6 +47,7 @@ const translations = {
   'solutions.bi.description': 'Make data-based decisions with our predictive analytics system.',
   'solutions.devops.title': 'DevOps',
   'solutions.devops.description': 'Automation of workflows for faster and more efficient development.',
+  'solutions.contactUs': 'Contact Us',
 
   'pricing.title': 'Create your',
   'pricing.titleHighlight': 'Website',
@@ -52,13 +55,14 @@ const translations = {
   'pricing.basic.name': 'Basic',
   'pricing.basic.description': 'Basic website with a simple and functional design.',
   'pricing.period.monthly': 'Monthly',
-  'pricing.period.yearly': 'Yearly',
+  'pricing.period.yearly': 'USD',
   'pricing.basic.feature1': 'Responsive Design',
   'pricing.basic.feature2': 'Up to 5 pages',
   'pricing.basic.feature3': 'Contact Form',
   'pricing.basic.feature4': 'Basic SEO',
   'pricing.basic.feature5': 'Social Media Integration',
   'pricing.basic.cta': 'Start Now',
+  'pricing.basic.price': '250',
   'pricing.pro.name': 'Professional',
   'pricing.pro.description': 'Dynamic website with CMS for growing companies',
   'pricing.pro.feature1': 'All Basic Features',
@@ -68,6 +72,7 @@ const translations = {
   'pricing.pro.feature5': 'Advanced SEO',
   'pricing.pro.feature6': 'Speed Optimization',
   'pricing.pro.cta': 'Select Plan',
+  'pricing.pro.price': '400',
   'pricing.enterprise.name': 'Enterprise',
   'pricing.enterprise.description': 'Complete solution with advanced features for large companies',
   'pricing.enterprise.feature1': 'All Professional Features',
@@ -78,6 +83,7 @@ const translations = {
   'pricing.enterprise.feature6': 'Free Updates',
   'pricing.enterprise.feature7': '100% Money-Back Guarantee',
   'pricing.enterprise.cta': 'Contact Now',
+  'pricing.enterprise.price': '1000',
   'pricing.mostPopular': 'Most Popular',
   'pricing.customSolution': 'Custom Solution',
   'pricing.contactUs': 'Contact Us',
@@ -124,7 +130,7 @@ const translations = {
   'footer.rights': '© 2025 Synapsis. All rights reserved.',
 
   'whatsapp.tooltip': 'Contact via WhatsApp',
-  
+  'whatsapp.message': 'Hello! I want to make a question, could you help me?',
   
   
   // Complete the rest of translations following the format in example.js

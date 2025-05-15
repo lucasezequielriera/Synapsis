@@ -6,12 +6,23 @@ import { useLanguage } from '../context/LanguageContext';
 const SynapsisPricing = () => {
   const { t } = useLanguage();
 
+  // Helper to scroll smoothly to the contact section
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // Fallback in case the section is not found
+      window.location.hash = 'contact';
+    }
+  };
+
   // Planes de precios
   const pricingPlans = [
     {
       name: t('pricing.basic.name', 'Básico'),
       description: t('pricing.basic.description', 'Página web estática perfecta para pequeñas empresas y profesionales'),
-      price: '599',
+      price: t('pricing.basic.price', '250000'),
       currency: '$',
       period: t('pricing.period.yearly', '/año'),
       features: [
@@ -23,12 +34,13 @@ const SynapsisPricing = () => {
       ],
       cta: t('pricing.basic.cta', 'Comenzar ahora'),
       popular: false,
-      color: 'from-cyan-500 to-blue-500'
+      color: 'from-cyan-500 to-blue-500',
+      href: '#contact'
     },
     {
       name: t('pricing.pro.name', 'Profesional'),
       description: t('pricing.pro.description', 'Sitio web dinámico con CMS para empresas en crecimiento'),
-      price: '1299',
+      price: t('pricing.pro.price', '1299'),
       currency: '$',
       period: t('pricing.period.yearly', '/año'),
       features: [
@@ -41,12 +53,13 @@ const SynapsisPricing = () => {
       ],
       cta: t('pricing.pro.cta', 'Seleccionar plan'),
       popular: true,
-      color: 'from-fuchsia-500 to-purple-600'
+      color: 'from-fuchsia-500 to-purple-600',
+      href: '#contact'
     },
     {
       name: t('pricing.enterprise.name', 'Empresarial'),
       description: t('pricing.enterprise.description', 'Solución completa con funcionalidades avanzadas para grandes empresas'),
-      price: '2499',
+      price: t('pricing.enterprise.price', '2499'),
       currency: '$',
       period: t('pricing.period.yearly', '/año'),
       features: [
@@ -60,7 +73,8 @@ const SynapsisPricing = () => {
       ],
       cta: t('pricing.enterprise.cta', 'Contactar ventas'),
       popular: false,
-      color: 'from-indigo-500 to-indigo-800'
+      color: 'from-indigo-500 to-indigo-800',
+      href: '#contact'
     }
   ];
 
@@ -130,6 +144,7 @@ const SynapsisPricing = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className={`w-full py-3 rounded-xl bg-gradient-to-r ${plan.color} text-white font-semibold flex items-center justify-center gap-2`}
+                  onClick={scrollToContact}
                 >
                   {plan.cta}
                   <ArrowRightIcon className="w-4 h-4" />

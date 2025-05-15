@@ -10,6 +10,16 @@ const SynapsisHero = () => {
   const { t, language } = useLanguage();
   const [isDesktop, setIsDesktop] = useState(window.innerWidth >= 1024);
 
+  // Helper to scroll smoothly to the contact section
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('solutions');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.hash = 'contact';
+    }
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth >= 1024);
@@ -75,7 +85,7 @@ const SynapsisHero = () => {
   ];
 
   // ADD: teléfono de WhatsApp para contacto
-  const whatsappPhone = '525512345678';
+  const whatsappPhone = '+34627043397';
 
   // Clase para altura del contenedor
   const heightClass = isDesktop ? "min-h-screen" : "min-h-screen";
@@ -129,6 +139,7 @@ const SynapsisHero = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-3 bg-gradient-to-r from-fuchsia-500 to-cyan-400 text-white rounded-full hover-glow flex items-center justify-center gap-2"
+                onClick={scrollToContact}
               >
                 {t('hero.button.start')}
                 <ArrowRightIcon className="w-5 h-5" />
@@ -139,7 +150,7 @@ const SynapsisHero = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mt-16">
             {stats.map((stat, index) => {
-              const whatsappMessage = encodeURIComponent(`¡Hola! Estoy interesado en ${stat.number}. ¿Podrían brindarme más información?`);
+              const whatsappMessage = encodeURIComponent(`${t('hero.stat.consulting')} ${stat.number}. ${t('hero.stat.consultingSecondPart')}`);
               const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${whatsappMessage}`;
               return (
                 <motion.a

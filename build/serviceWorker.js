@@ -2,14 +2,12 @@
 const CACHE_NAME = 'synapsis-cache-v2';
 const RUNTIME_CACHE = 'synapsis-runtime-v2';
 
-// Recursos críticos que se deben cachear inmediatamente
+// Mantén solo archivos sin hash para evitar fallos tras nuevos despliegues
 const CRITICAL_ASSETS = [
   '/',
   '/index.html',
   '/manifest.json',
-  '/favicon.ico',
-  '/static/css/main.76fd5fac.css',
-  '/static/js/main.bb62ecd3.js'
+  '/favicon.ico'
 ];
 
 // Recursos secundarios que cachearemos al usarse
@@ -17,7 +15,6 @@ const SECONDARY_ASSETS = [
   '/logo192.png',
   '/logo512.png',
   'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap',
-  'https://cdn.tailwindcss.com',
   'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'
 ];
 
@@ -27,7 +24,8 @@ const NEVER_CACHE_DOMAINS = [
   'analytics',
   'googletagmanager.com',
   'firebase',
-  'api.emailjs.com'
+  'api.emailjs.com',
+  'tailwindcss.com'
 ];
 
 // Instalar - Precachear recursos críticos
@@ -36,16 +34,32 @@ self.addEventListener('install', event => {
     Promise.all([
       // Caché principal para recursos críticos
       caches.open(CACHE_NAME)
-        .then(cache => {
+        .then(async cache => {
           console.log('Caché de recursos críticos iniciado');
-          return cache.addAll(CRITICAL_ASSETS);
+          // Añadimos cada recurso de forma individual para que un fallo no interrumpa el resto
+          await Promise.all(
+            CRITICAL_ASSETS.map(async asset => {
+              try {
+                await cache.add(asset);
+              } catch (err) {
+                console.warn('No se pudo cachear', asset, err);
+              }
+            })
+          );
         }),
       // Caché para recursos secundarios
       caches.open(RUNTIME_CACHE)
-        .then(cache => {
+        .then(async cache => {
           console.log('Caché de recursos secundarios iniciado');
-          // Precargar algunos recursos secundarios importantes
-          return cache.addAll(SECONDARY_ASSETS);
+          await Promise.all(
+            SECONDARY_ASSETS.map(async asset => {
+              try {
+                await cache.add(asset);
+              } catch (err) {
+                console.warn('No se pudo cachear', asset, err);
+              }
+            })
+          );
         })
     ])
     .then(() => self.skipWaiting()) // Activar inmediatamente

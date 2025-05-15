@@ -12,6 +12,8 @@ const translations = {
   'hero.stat.companySystem': 'Saber más sobre Sistemas Empresariales',
   'hero.stat.automatization': 'Saber más sobre Automatización',
   'hero.stat.digitalTransformation': 'Sabre más sobre Transformación Digital',
+  'hero.stat.consulting': '¡Hola! Estoy interesado en',
+  'hero.stat.consultingSecondPart': '¿Podrían brindarme más información?',
 
   'features.title': 'Potencia tu Negocio',
   'features.titleHighlight': 'Inteligente',
@@ -54,13 +56,14 @@ const translations = {
   'pricing.basic.name': 'Básico',
   'pricing.basic.description': 'Página web básica con un diseño simple y funcional.',
   'pricing.period.monthly': 'Mensual',
-  'pricing.period.yearly': 'Anual',
+  'pricing.period.yearly': 'ARS',
   'pricing.basic.feature1': 'Diseño Responsive',
   'pricing.basic.feature2': 'Hasta 5 páginas',
   'pricing.basic.feature3': 'Formulario de contacto',
   'pricing.basic.feature4': 'SEO básico',
   'pricing.basic.feature5': 'Integración con redes sociales',
   'pricing.basic.cta': 'Comenzar ahora',
+  'pricing.basic.price': '250.000',
   'pricing.pro.name': 'Profesional',
   'pricing.pro.description': 'Sitio web dinámico con CMS para empresas en crecimiento',
   'pricing.pro.feature1': 'Todo lo del plan Básico',
@@ -70,6 +73,7 @@ const translations = {
   'pricing.pro.feature5': 'SEO avanzado',
   'pricing.pro.feature6': 'Optimización de velocidad',
   'pricing.pro.cta': 'Seleccionar plan',
+  'pricing.pro.price': '400.000',
   'pricing.enterprise.name': 'Empresarial',
   'pricing.enterprise.description': 'Solución completa con funcionalidades avanzadas para grandes empresas',
   'pricing.enterprise.feature1': 'Todo lo del plan Profesional',
@@ -81,6 +85,7 @@ const translations = {
   'pricing.enterprise.feature7': 'Garantía de devolución del 100% del dinero',
   'pricing.enterprise.cta': 'Contactar ahora',
   'pricing.enterprise.popular': 'Recomendado',
+  'pricing.enterprise.price': '1.000.000',
   'pricing.mostPopular': 'Más Popular',
   'pricing.customSolution': 'Solución Personalizada',
   'pricing.contactUs': 'Contacta con nosotros',
@@ -127,6 +132,7 @@ const translations = {
   'footer.rights': '© 2025 Synapsis. Todos los derechos reservados.',
 
   'whatsapp.tooltip': 'Contactar por WhatsApp',
+  'whatsapp.message': '¡Hola! Quiero hacer una consulta, ¿Podrían ayudarme?',
 };
 
 export default translations; 

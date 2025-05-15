@@ -5,10 +5,14 @@ import { useLanguage } from '../context/LanguageContext';
 
 const SynapsisWhatsApp = () => {
   const { t } = useLanguage();
+
+  const whatsappMessage = encodeURIComponent(t('whatsapp.message'));
+  const whatsappPhone = '+34627043397';
+  const whatsappUrl = `https://wa.me/${whatsappPhone}?text=${whatsappMessage}`;
   
   return (
     <motion.a
-      href="https://wa.me/525512345678"
+      href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       initial={{ opacity: 0, scale: 0.5 }}
