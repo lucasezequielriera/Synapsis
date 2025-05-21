@@ -15,7 +15,7 @@ import emailjs from '@emailjs/browser';
 
 // Reemplaza con tus propias credenciales de EmailJS
 const EMAILJS_SERVICE_ID = "service_0v6dzmj"; // ejemplo: "service_abc123"
-const EMAILJS_TEMPLATE_ID = "template_lr5krcf"; // ejemplo: "template_xyz789"
+const EMAILJS_TEMPLATE_ID = "template_hqcsosv"; // ejemplo: "template_xyz789"
 const EMAILJS_PUBLIC_KEY = "qURGq1ec3yDvqyiy4"; // ejemplo: "abc123xyz789"
 
 const SynapsisCTA = () => {
