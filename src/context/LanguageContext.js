@@ -17,7 +17,7 @@ const loadTranslations = async (language) => {
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const [language, setLanguage] = useState('es');
+  const [language, setLanguage] = useState('en');
   const [translations, setTranslations] = useState({});
 
   // Función para cambiar el idioma

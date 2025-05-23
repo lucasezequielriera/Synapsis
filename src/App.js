@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import LanguageSelector from './components/LanguageSelector';
 import SynapsisLogo from './components/SynapsisLogo';
@@ -11,14 +12,70 @@ import SynapsisPricing from './components/SynapsisPricing';
 import SynapsisCTA from './components/SynapsisCTA';
 import SynapsisFooter from './components/SynapsisFooter';
 import SynapsisWhatsApp from './components/SynapsisWhatsApp';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsConditions from './components/TermsConditions';
+import CookiePolicy from './components/CookiePolicy';
 import initSEOOptimizations from './utils/seo';
 import { onCLS, onFCP, onLCP } from 'web-vitals';
 import { HelmetProvider } from 'react-helmet-async';
 import SEO from './components/SEO';
 
-const App = () => {
+// Main Home Page component
+const HomePage = () => {
   const isDesktop = window.innerWidth >= 1024;
+  
+  return (
+    <>
+      <header>
+        {/* <SynapsisLogo /> */}
+        <nav aria-label="Language selection">
+          <LanguageSelector />
+        </nav>
+        {/* Global SEO meta tags */}
+        <SEO />
+      </header>
+      <AnimatePresence>
+        <motion.main
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <section aria-label="Introduction">
+            <SynapsisHero />
+          </section>
+          { isDesktop && <>
+            <section aria-label="Solutions">
+              <SynapsisSolutions />
+            </section>
+            <section aria-label="Features">
+              <SynapsisFeatures />
+            </section>
+            {/* <section aria-label="Testimonials">
+              <SynapsisTestimonials />
+            </section> */}
+            <section aria-label="Pricing">
+              <SynapsisPricing />
+            </section>
+            <section aria-label="Contact us">
+              <SynapsisCTA />
+            </section>
+          </>}
+        </motion.main>
+      </AnimatePresence>
+      { isDesktop && <>
+        <footer>
+          <SynapsisFooter />
+        </footer>
+        <aside aria-label="WhatsApp contact">
+          <SynapsisWhatsApp />
+        </aside>
+      </>}
+    </>
+  );
+};
 
+const App = () => {
   useEffect(() => {
     // Inicializar optimizaciones SEO
     initSEOOptimizations();
@@ -61,51 +118,14 @@ const App = () => {
     <HelmetProvider>
       <LanguageProvider>
         <div className="font-sans bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 min-h-screen relative">
-          <header>
-            {/* <SynapsisLogo /> */}
-            <nav aria-label="Language selection">
-              <LanguageSelector />
-            </nav>
-            {/* Global SEO meta tags */}
-            <SEO />
-          </header>
-          <AnimatePresence>
-            <motion.main
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <section aria-label="Introduction">
-                <SynapsisHero />
-              </section>
-              { isDesktop && <>
-                <section aria-label="Solutions">
-                  <SynapsisSolutions />
-                </section>
-                <section aria-label="Features">
-                  <SynapsisFeatures />
-                </section>
-                {/* <section aria-label="Testimonials">
-                  <SynapsisTestimonials />
-                </section> */}
-                <section aria-label="Pricing">
-                  <SynapsisPricing />
-                </section>
-                <section aria-label="Contact us">
-                  <SynapsisCTA />
-                </section>
-              </>}
-            </motion.main>
-          </AnimatePresence>
-          { isDesktop && <>
-            <footer>
-              <SynapsisFooter />
-            </footer>
-            <aside aria-label="WhatsApp contact">
-              <SynapsisWhatsApp />
-            </aside>
-          </>}
+          <Router>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-conditions" element={<TermsConditions />} />
+              <Route path="/cookie-policy" element={<CookiePolicy />} />
+            </Routes>
+          </Router>
         </div>
       </LanguageProvider>
     </HelmetProvider>

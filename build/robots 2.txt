@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://synapsis.team/sitemap.xml 

@@ -1,14 +1,14 @@
 const translations = {
   // Hero section
-  'hero.title': 'Synapsis',
+  'hero.title': 'Synapsis Team',
   'hero.subtitle': 'Transformando el presente con IA y automatización inteligente',
   'hero.button.start': 'Comenzar Ahora',
   'hero.button.demo': 'Ver Demostración',
-  'hero.stat.number1': 'Sitio Web',
+  'hero.stat.number1': 'Recursos Humanos',
   'hero.stat.number2': 'Sistema Empresarial',
   'hero.stat.number3': 'Automatización',
   'hero.stat.number4': 'Transformación Digital',
-  'hero.stat.website': 'Saber más sobre Sitios Web',
+  'hero.stat.website': 'Saber más sobre Recursos Humanos',
   'hero.stat.companySystem': 'Saber más sobre Sistemas Empresariales',
   'hero.stat.automatization': 'Saber más sobre Automatización',
   'hero.stat.digitalTransformation': 'Sabre más sobre Transformación Digital',
@@ -112,7 +112,7 @@ const translations = {
   'cta.form.sending': 'Enviando...',
   'cta.button': 'Contactar Ahora',
 
-  'footer.companyDescription': 'Synapsis es una empresa de desarrollo de software que se enfoca en la innovación y la automatización de procesos empresariales.',
+  'footer.companyDescription': 'Synapsis Team es una empresa de desarrollo de software que se enfoca en la innovación y la automatización de procesos empresariales.',
   'footer.quickLinks': 'Enlaces Rápidos',
   'footer.link.home': 'Inicio',
   'footer.link.services': 'Servicios',
@@ -129,7 +129,7 @@ const translations = {
   'footer.privacy': 'Política de Privacidad',
   'footer.terms': 'Términos y Condiciones',
   'footer.cookies': 'Política de Cookies',
-  'footer.rights': '© 2025 Synapsis. Todos los derechos reservados.',
+  'footer.rights': '© 2025 Synapsis Team. Todos los derechos reservados.',
 
   'whatsapp.tooltip': 'Contactar por WhatsApp',
   'whatsapp.message': '¡Hola! Quiero hacer una consulta, ¿Podrían ayudarme?',

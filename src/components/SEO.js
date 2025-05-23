@@ -7,8 +7,8 @@ import { useLanguage } from '../context/LanguageContext';
  * Allows overriding of title/description and injection of structured data.
  */
 const SEO = ({
-  title = 'Synapsis | Transformación Digital & IA',
-  description = 'Plataforma de desarrollo y automatización para acelerar tu negocio con Inteligencia Artificial.',
+  title = 'Synapsis Team | Digital Transformation & AI',
+  description = 'Development and automation platform to accelerate your business with Artificial Intelligence.',
   url = 'https://synapsis.com',
   image = 'https://synapsis.com/og-image.png',
   structuredData = null,
@@ -21,10 +21,10 @@ const SEO = ({
     fr: 'fr_FR',
     de: 'de_DE'
   };
-  const locale = localeMap[language] || 'es_ES';
+  const locale = localeMap[language] || 'en_US';
 
   return (
-    <Helmet htmlAttributes={{ lang: language || 'es' }}>
+    <Helmet htmlAttributes={{ lang: language || 'en' }}>
       <title>{title}</title>
       <meta name="description" content={description} />
       {/* Open Graph */}

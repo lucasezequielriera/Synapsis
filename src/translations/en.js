@@ -1,14 +1,14 @@
 const translations = {
   // Hero section
-  'hero.title': 'Synapsis',
+  'hero.title': 'Synapsis Team',
   'hero.subtitle': 'Transforming the present with AI and intelligent automation',
   'hero.button.start': 'Start Now',
   'hero.button.demo': 'See Demo',
-  'hero.stat.number1': 'Web Site',
+  'hero.stat.number1': 'Human Resources',
   'hero.stat.number2': 'Company System',
   'hero.stat.number3': 'Automatization',
   'hero.stat.number4': 'Digital Transformation',
-  'hero.stat.website': 'See more about Web Site',
+  'hero.stat.website': 'See more about Human Resources',
   'hero.stat.companySystem': 'See more about Company System',
   'hero.stat.automatization': 'See more about Automatization',
   'hero.stat.digitalTransformation': 'See more about Digital Transformation',
@@ -110,7 +110,7 @@ const translations = {
   'cta.form.sending': 'Sending...',
   'cta.button': 'Contact Now',
 
-  'footer.companyDescription': 'Synapsis is a software development company focused on innovation and automation of business processes.',
+  'footer.companyDescription': 'Synapsis Team is a software development company focused on innovation and automation of business processes.',
   'footer.quickLinks': 'Quick Links',
   'footer.link.home': 'Home',
   'footer.link.services': 'Services',
@@ -127,7 +127,7 @@ const translations = {
   'footer.privacy': 'Privacy Policy',
   'footer.terms': 'Terms and Conditions',
   'footer.cookies': 'Cookie Policy',
-  'footer.rights': '© 2025 Synapsis. All rights reserved.',
+  'footer.rights': '© 2025 Synapsis Team. All rights reserved.',
 
   'whatsapp.tooltip': 'Contact via WhatsApp',
   'whatsapp.message': 'Hello! I want to make a question, could you help me?',

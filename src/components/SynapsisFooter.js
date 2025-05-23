@@ -1,6 +1,7 @@
 // src/components/SynapsisFooter.js
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import {
   EnvelopeIcon,
   PhoneIcon,
@@ -127,9 +128,21 @@ const SynapsisFooter = () => {
               {t('footer.rights')}
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-500 hover:text-white text-sm">{t('footer.privacy')}</a>
-              <a href="#" className="text-gray-500 hover:text-white text-sm">{t('footer.terms')}</a>
-              <a href="#" className="text-gray-500 hover:text-white text-sm">{t('footer.cookies')}</a>
+              <motion.div whileHover={{ y: -2 }}>
+                <Link to="/privacy-policy" className="text-gray-500 hover:text-white text-sm transition-colors">
+                  {t('footer.privacy')}
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ y: -2 }}>
+                <Link to="/terms-conditions" className="text-gray-500 hover:text-white text-sm transition-colors">
+                  {t('footer.terms')}
+                </Link>
+              </motion.div>
+              <motion.div whileHover={{ y: -2 }}>
+                <Link to="/cookie-policy" className="text-gray-500 hover:text-white text-sm transition-colors">
+                  {t('footer.cookies')}
+                </Link>
+              </motion.div>
             </div>
           </div>
         </div>
